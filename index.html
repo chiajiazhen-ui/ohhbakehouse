@@ -36,16 +36,20 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Responsive Banner Logic */
+        /* Optimized Responsive Banner */
         .hero-bg {
             background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Mobile.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
+        
         @media (min-width: 768px) {
             .hero-bg { 
                 background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Desktop.png');
-                background-position: right center; 
+                /* background-size: 100% 100% makes it fit exactly, but 'cover' is safer for ultrawide */
+                background-size: cover; 
+                background-position: center right; 
             }
         }
     </style>
@@ -65,12 +69,12 @@
     </div>
 </nav>
 
-<header class="relative w-full min-h-[550px] md:min-h-[650px] flex items-center hero-bg">
-    <div class="absolute inset-0 bg-black/20 md:bg-transparent"></div>
+<header class="relative w-full h-[70vh] md:h-[85vh] min-h-[500px] flex items-center hero-bg">
+    <div class="absolute inset-0 bg-black/30 md:bg-transparent"></div>
     
     <div class="max-w-6xl mx-auto px-6 w-full flex justify-center md:justify-end relative z-10">
         <div class="max-w-md text-center md:text-right text-white md:text-gray-800 dark:md:text-white">
-            <h1 class="font-display text-5xl md:text-7xl text-primary md:text-primary mb-4 drop-shadow-lg md:drop-shadow-none">Heng • Ong • Huat</h1>
+            <h1 class="font-display text-5xl md:text-7xl text-primary md:text-primary mb-4 drop-shadow-xl md:drop-shadow-none">Heng • Ong • Huat</h1>
             <p class="text-xl md:text-2xl leading-relaxed font-medium drop-shadow-md md:drop-shadow-none">
                 Artisanal bakes for a prosperous New Year. Hand-crafted with premium ingredients and no preservatives.
             </p>
@@ -83,7 +87,6 @@
 
 <main id="products" class="max-w-6xl mx-auto px-6 py-20">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
         <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg border border-orange-100 dark:border-gray-700 flex flex-col">
             <div class="p-8 flex-grow">
                 <div class="bg-orange-50 dark:bg-orange-900/20 rounded-2xl p-4 mb-6 flex justify-center">
@@ -101,18 +104,14 @@
                         <span class="font-bold text-primary">$34.50</span>
                     </div>
                 </div>
-                <div class="mt-6 text-[10px] text-gray-400 border-t pt-4">
-                    <p><strong>Per Piece (17g):</strong> 71 kcal | Fat: 4.2g | Sugar: 3.3g</p>
-                    <p class="mt-1">Allergens: Milk, Egg, Wheat</p>
-                </div>
             </div>
             <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Order Now</a>
         </div>
 
         <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg border border-orange-100 dark:border-gray-700 flex flex-col">
             <div class="p-8 flex-grow">
-                <div class="bg-accent-green/10 rounded-2xl p-4 mb-6 flex justify-center">
-                    <span class="material-icons-outlined text-6xl text-accent-green">cookie</span>
+                <div class="bg-green-50/50 dark:bg-green-900/20 rounded-2xl p-4 mb-6 flex justify-center">
+                    <span class="material-icons-outlined text-6xl text-green-600">cookie</span>
                 </div>
                 <h3 class="font-display text-3xl mb-2">Cranberry Flakes</h3>
                 <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">The perfect crunch of cornflakes meets tart dried cranberries.</p>
@@ -125,10 +124,6 @@
                         <span>Large (L)</span>
                         <span class="font-bold text-primary">$29.50</span>
                     </div>
-                </div>
-                <div class="mt-6 text-[10px] text-gray-400 border-t pt-4">
-                    <p><strong>Per Piece (10g):</strong> 45 kcal | Fat: 1.8g | Sugar: 3.2g</p>
-                    <p class="mt-1">Allergens: Milk, Egg, Wheat</p>
                 </div>
             </div>
             <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Order Now</a>
@@ -151,10 +146,6 @@
                         <span class="font-bold text-primary">$29.50</span>
                     </div>
                 </div>
-                <div class="mt-6 text-[10px] text-gray-400 border-t pt-4">
-                    <p><strong>Per Piece (8g):</strong> 38 kcal | Fat: 1.7g | Sugar: 3.5g</p>
-                    <p class="mt-1">Allergens: Milk, Egg, Wheat</p>
-                </div>
             </div>
             <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Order Now</a>
         </div>
@@ -164,15 +155,14 @@
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="font-display text-4xl text-primary mb-4">Place Your Order</h2>
-                <p class="text-gray-500">Select items and quantities below. We will reach out via WhatsApp to confirm.</p>
+                <p class="text-gray-500">We will WhatsApp you to confirm payment and delivery details.</p>
             </div>
 
             <form id="bakeryForm" class="space-y-8">
                 <div class="space-y-4">
-                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300">Select Variations:</label>
-                    
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300">Select Items:</label>
                     <div class="grid grid-cols-1 gap-4">
-                        <div class="flex flex-wrap items-center gap-4 p-4 border rounded-2xl dark:border-gray-600 bg-orange-50/30">
+                        <div class="flex flex-wrap items-center gap-4 p-4 border rounded-2xl dark:border-gray-600 bg-orange-50/20">
                             <span class="w-full md:w-48 font-bold">Pineapple Tarts</span>
                             <div class="flex gap-4">
                                 <label class="text-xs">M ($20.50)<input type="number" name="PT_M" min="0" value="0" class="block w-20 rounded-lg border-gray-300 dark:bg-gray-700"></label>
@@ -197,24 +187,13 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Name</label>
-                        <input required type="text" name="name" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="Full Name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">WhatsApp Contact</label>
-                        <input required type="tel" name="phone" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="+65 XXXX XXXX">
-                    </div>
+                    <input required type="text" name="name" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="Full Name">
+                    <input required type="tel" name="phone" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="WhatsApp Contact">
                 </div>
-
-                <div>
-                    <label class="block text-sm font-bold mb-2">Delivery Address</label>
-                    <textarea required name="address" rows="2" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="Street name, Unit No, Postal Code"></textarea>
-                </div>
+                <textarea required name="address" rows="2" class="w-full px-6 py-4 rounded-2xl border-2 border-orange-100 dark:bg-gray-800 dark:border-gray-700" placeholder="Delivery Address"></textarea>
 
                 <button type="submit" id="submitBtn" class="w-full bg-primary text-white text-xl font-display py-6 rounded-2xl shadow-xl hover:bg-red-700 transition-all flex items-center justify-center gap-3">
-                    Submit Order to Bakehouse
-                    <span class="material-icons-outlined">send</span>
+                    Submit Order Request <span class="material-icons-outlined">send</span>
                 </button>
             </form>
         </div>
@@ -227,16 +206,13 @@
 
 <script>
     const form = document.getElementById('bakeryForm');
-    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         btn.disabled = true;
-        btn.innerText = "Processing...";
+        btn.innerText = "Huat Ah! Sending...";
 
         const data = new FormData(this);
-        
-        // Construct the detailed order summary string
         let orderSummary = "";
         const items = [
             {id: 'PT_M', label: 'PT (M)'}, {id: 'PT_L', label: 'PT (L)'},
@@ -256,9 +232,8 @@
             return;
         }
 
-        // Google Form Submission
+        // Automated Google Form Submission logic
         const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScfCnofLzDEpJM7fgiCFoI0Jo2p_9X0ewsAwd4LYTLInc5ORA/formResponse";
-        
         const formData = new URLSearchParams();
         formData.append('entry.532453062', data.get('name'));
         formData.append('entry.1450488871', data.get('phone'));
@@ -270,13 +245,13 @@
             mode: 'no-cors',
             body: formData
         }).then(() => {
-            alert("Huat Ah! Order submitted for " + data.get('name') + ". We will WhatsApp you shortly to confirm payment and delivery.");
+            alert("Order submitted successfully! We will WhatsApp you shortly.");
             form.reset();
             btn.disabled = false;
             btn.innerText = "Submit Order Request";
         }).catch(err => {
-            alert("Something went wrong. Please WhatsApp us directly!");
-            console.error(err);
+            alert("Error submitting form. Please check your connection.");
+            btn.disabled = false;
         });
     });
 </script>

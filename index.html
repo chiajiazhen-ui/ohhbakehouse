@@ -33,7 +33,6 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Hero Styling */
         .hero-bg {
             background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Mobile.png');
             background-size: cover;
@@ -44,21 +43,19 @@
         @media (min-width: 768px) {
             .hero-bg { 
                 background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Desktop.png');
-                /* Use background-size: contain and center to prevent any cropping on desktop */
                 background-size: contain; 
                 background-position: center; 
-                background-color: #FDF5E6; /* Matches image background */
+                background-color: #FDF5E6; 
             }
         }
 
-        /* Carousel Hide Scrollbar */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-background-light text-gray-800 font-sans">
 
-<nav class="sticky top-0 z-50 bg-nav-beige/95 backdrop-blur-md py-3 border-b border-orange-100">
+<nav class="sticky top-0 z-50 bg-nav-beige/95 backdrop-blur-md pt-3 pb-3 md:pb-0 border-b border-orange-100">
     <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
         <img src="https://chiajiazhen-ui.github.io/ohhbakehouse/OHHLOGO_2.png" alt="OHH Bakehouse Logo" class="h-12 md:h-16 w-auto object-contain">
         <div class="flex items-center gap-4">
@@ -67,22 +64,22 @@
     </div>
 </nav>
 
-<header class="relative w-full h-[70vh] md:h-[85vh] md:min-h-[400px] flex items-center hero-bg">
+<header class="relative w-full h-[70vh] md:h-[85vh] md:min-h-[600px] flex items-center hero-bg">
     <div class="absolute inset-0 bg-black/5 md:bg-transparent"></div>
     <div class="max-w-6xl mx-auto px-6 w-full flex justify-center md:justify-end relative z-10">
         <div class="max-w-md text-center md:text-right text-white md:text-gray-800">
-            <h1 class="font-display text-5xl md:text-7xl text-primary mb-4 drop-shadow-xl md:drop-shadow-none">兴Ong•旺Heng•发Huat</h1>
+            <h1 class="font-display text-5xl md:text-7xl text-primary mb-4 drop-shadow-xl md:drop-shadow-none">Heng • Ong • Huat</h1>
             <p class="text-xl md:text-2xl leading-relaxed font-medium drop-shadow-md md:drop-shadow-none">
-                Artisanal bakes for a prosperous New Year. Hand-crafted with premium ingredients. Open for business now! Taking orders for 2026 Chinese New Year.
+                Artisanal bakes for a prosperous New Year. Hand-crafted with premium ingredients.
             </p>
             <div class="mt-10">
-                <a href="#products" class="inline-block bg-primary text-white px-10 py-4 rounded-full font-display text-xl shadow-2xl hover:bg-red-700 transition-all hover:scale-105">Explore 2026 Collection</a>
+                <a href="#products" class="inline-block bg-primary text-white px-10 py-4 rounded-full font-display text-xl shadow-2xl hover:bg-red-700 transition-all hover:scale-105">Explore the Collection</a>
             </div>
         </div>
     </div>
 </header>
 
-<main id="products" class="max-w-6xl mx-auto px-6 py-20">
+<main id="products" class="max-w-6xl mx-auto px-6 py-10">
     
     <div class="relative group">
         <button onclick="scrollCarousel(-1)" class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-2 rounded-full shadow-lg ml-1 text-primary">
@@ -107,9 +104,9 @@
                     </div>
                     
                     <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
-                        <p class="font-bold text-gray-600">Nutritional Info (Per 17g piece): [cite: 3]</p>
-                        <p>71 kcal | Fat: 4.2g | Sugar: 3.3g | Sodium: 22mg | Protein: 1.3g </p>
-                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 8]</p>
+                        [cite_start]<p class="font-bold text-gray-600">Nutritional Info (Per 17g piece)[cite: 3]:</p>
+                        <p>71 kcal | Fat: 4.2g | Sugar: 3.3g | Sodium: 22mg | [cite_start]Protein: 1.3g [cite: 5]</p>
+                        [cite_start]<p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 8]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -128,9 +125,9 @@
                     </div>
 
                     <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
-                        <p class="font-bold text-gray-600">Nutritional Info (Per 10g piece): [cite: 23]</p>
-                        <p>45 kcal | Fat: 1.8g | Sugar: 3.2g | Sodium: 48mg | Protein: 0.6g </p>
-                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 28]</p>
+                        [cite_start]<p class="font-bold text-gray-600">Nutritional Info (Per 10g piece)[cite: 23]:</p>
+                        <p>45 kcal | Fat: 1.8g | Sugar: 3.2g | Sodium: 48mg | [cite_start]Protein: 0.6g [cite: 25]</p>
+                        [cite_start]<p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 28]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -149,9 +146,9 @@
                     </div>
 
                     <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
-                        <p class="font-bold text-gray-600">Nutritional Info (Per 8g piece): [cite: 13]</p>
-                        <p>38 kcal | Fat: 1.7g | Sugar: 3.5g | Sodium: 36mg | Protein: 0.4g </p>
-                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 18]</p>
+                        [cite_start]<p class="font-bold text-gray-600">Nutritional Info (Per 8g piece)[cite: 13]:</p>
+                        <p>38 kcal | Fat: 1.7g | Sugar: 3.5g | Sodium: 36mg | [cite_start]Protein: 0.4g [cite: 15]</p>
+                        [cite_start]<p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 18]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -159,7 +156,7 @@
         </div>
     </div>
 
-    <section class="mt-24 bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-orange-100" id="order-form">
+    <section class="mt-12 bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-orange-100" id="order-form">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="font-display text-4xl text-primary mb-4">Place Your Order</h2>
@@ -210,7 +207,7 @@
     </section>
 </main>
 
-<footer class="bg-nav-beige py-12 text-center border-t border-orange-100">
+<footer class="bg-nav-beige py-6 text-center border-t border-orange-100">
     <div class="flex justify-center gap-6 mb-6">
         <a href="https://www.instagram.com/ohhbakehouse" target="_blank" class="flex items-center gap-2 text-primary hover:text-red-700 font-bold transition-colors">
             <span class="material-icons-outlined">web_stories</span> Instagram

@@ -33,7 +33,7 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Fixed Desktop Hero: Using contain/center to prevent cropping */
+        /* Hero Styling */
         .hero-bg {
             background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Mobile.png');
             background-size: cover;
@@ -44,13 +44,14 @@
         @media (min-width: 768px) {
             .hero-bg { 
                 background-image: url('https://chiajiazhen-ui.github.io/ohhbakehouse/OHHBANNER_Desktop.png');
-                /* background-size: contain ensures the full width/height is visible without cropping */
-                background-size: cover; 
+                /* Use background-size: contain and center to prevent any cropping on desktop */
+                background-size: contain; 
                 background-position: center; 
+                background-color: #FDF5E6; /* Matches image background */
             }
         }
 
-        /* Carousel scroll behavior */
+        /* Carousel Hide Scrollbar */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -67,13 +68,12 @@
 </nav>
 
 <header class="relative w-full h-[70vh] md:h-[85vh] md:min-h-[600px] flex items-center hero-bg">
-    <div class="absolute inset-0 bg-black/20 md:bg-transparent"></div>
-    
+    <div class="absolute inset-0 bg-black/5 md:bg-transparent"></div>
     <div class="max-w-6xl mx-auto px-6 w-full flex justify-center md:justify-end relative z-10">
         <div class="max-w-md text-center md:text-right text-white md:text-gray-800">
             <h1 class="font-display text-5xl md:text-7xl text-primary mb-4 drop-shadow-xl md:drop-shadow-none">Heng • Ong • Huat</h1>
             <p class="text-xl md:text-2xl leading-relaxed font-medium drop-shadow-md md:drop-shadow-none">
-                Artisanal bakes for a prosperous New Year. Hand-crafted with premium ingredients and no preservatives.
+                Artisanal bakes for a prosperous New Year. Hand-crafted with premium ingredients.
             </p>
             <div class="mt-10">
                 <a href="#products" class="inline-block bg-primary text-white px-10 py-4 rounded-full font-display text-xl shadow-2xl hover:bg-red-700 transition-all hover:scale-105">Explore the Collection</a>
@@ -85,10 +85,10 @@
 <main id="products" class="max-w-6xl mx-auto px-6 py-20">
     
     <div class="relative group">
-        <button onclick="scrollCarousel(-1)" class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-2 rounded-full shadow-lg ml-2 text-primary">
+        <button onclick="scrollCarousel(-1)" class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-2 rounded-full shadow-lg ml-1 text-primary">
             <span class="material-icons-outlined">chevron_left</span>
         </button>
-        <button onclick="scrollCarousel(1)" class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-2 rounded-full shadow-lg mr-2 text-primary">
+        <button onclick="scrollCarousel(1)" class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-2 rounded-full shadow-lg mr-1 text-primary">
             <span class="material-icons-outlined">chevron_right</span>
         </button>
 
@@ -100,14 +100,16 @@
                         <span class="material-icons-outlined text-6xl text-primary">bakery_dining</span>
                     </div>
                     <h3 class="font-display text-3xl mb-2">Pineapple Tarts</h3>
-                    <p class="text-gray-500 text-sm mb-6">Melt-in-your-mouth buttery pastry with our secret slow-cooked pineapple jam[cite: 10].</p>
+                    <p class="text-gray-500 text-sm mb-6">Melt-in-your-mouth buttery pastry with our secret slow-cooked pineapple jam.</p>
                     <div class="space-y-2 mb-6">
                         <div class="flex justify-between font-bold"><span>Medium (M)</span><span>$20.50</span></div>
                         <div class="flex justify-between font-bold text-primary"><span>Large (L)</span><span>$34.50</span></div>
                     </div>
-                    <div class="text-[10px] text-gray-400 border-t pt-4 space-y-1">
-                        <p><strong>Per Piece (17g):</strong> 71 kcal, 3.3g Sugar.</p>
-                        <p><strong>Ingredients:</strong> Wheat Flour, Butter, Pineapple Paste, Icing Sugar, Egg Yolk[cite: 10].</p>
+                    
+                    <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
+                        <p class="font-bold text-gray-600">Nutritional Info (Per 17g piece): [cite: 3]</p>
+                        <p>71 kcal | Fat: 4.2g | Sugar: 3.3g | Sodium: 22mg | Protein: 1.3g </p>
+                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 8]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -119,14 +121,16 @@
                         <span class="material-icons-outlined text-6xl text-primary">cookie</span>
                     </div>
                     <h3 class="font-display text-3xl mb-2">Cranberry Cornflakes Cookies</h3>
-                    <p class="text-gray-500 text-sm mb-6">Perfectly crunchy cornflakes meets the tang of premium dried cranberries[cite: 30].</p>
+                    <p class="text-gray-500 text-sm mb-6">Perfectly crunchy cornflakes meets the tang of premium dried cranberries.</p>
                     <div class="space-y-2 mb-6">
                         <div class="flex justify-between font-bold"><span>Medium (M)</span><span>$16.50</span></div>
                         <div class="flex justify-between font-bold text-primary"><span>Large (L)</span><span>$29.50</span></div>
                     </div>
-                   <div class="text-[10px] text-gray-400 border-t pt-4 space-y-1">
-                        <p><strong>Per Piece (10g):</strong> 45 kcal, 3.2g Sugar.</p>
-                        <p><strong>Ingredients:</strong> Wheat Flour, Butter, Dried Cranberries, Cornflakes, Fruit Tea[cite: 30].</p>
+
+                    <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
+                        <p class="font-bold text-gray-600">Nutritional Info (Per 10g piece): [cite: 23]</p>
+                        <p>45 kcal | Fat: 1.8g | Sugar: 3.2g | Sodium: 48mg | Protein: 0.6g </p>
+                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 28]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -138,14 +142,16 @@
                         <span class="material-icons-outlined text-6xl text-primary">coffee</span>
                     </div>
                     <h3 class="font-display text-3xl mb-2">Earl Grey Raisin Cookies</h3>
-                    <p class="text-gray-500 text-sm mb-6">Infused with premium Earl Grey tea leaves and plump raisins for a floral finish[cite: 20].</p>
+                    <p class="text-gray-500 text-sm mb-6">Infused with premium Earl Grey tea leaves and plump raisins for a floral finish.</p>
                     <div class="space-y-2 mb-6">
                         <div class="flex justify-between font-bold"><span>Medium (M)</span><span>$16.50</span></div>
                         <div class="flex justify-between font-bold text-primary"><span>Large (L)</span><span>$29.50</span></div>
                     </div>
-                    <div class="text-[10px] text-gray-400 border-t pt-4 space-y-1">
-                        <p><strong>Per Piece (8g):</strong> 38 kcal, 3.5g Sugar.</p>
-                        <p><strong>Ingredients:</strong> Wheat Flour, Butter, Raisins, Earl Grey Tea, Brown Sugar[cite: 20].</p>
+
+                    <div class="bg-orange-50/50 p-4 rounded-2xl text-[11px] space-y-1">
+                        <p class="font-bold text-gray-600">Nutritional Info (Per 8g piece): [cite: 13]</p>
+                        <p>38 kcal | Fat: 1.7g | Sugar: 3.5g | Sodium: 36mg | Protein: 0.4g </p>
+                        <p class="text-gray-400 italic mt-1">Contains: Milk, Egg, Wheat [cite: 18]</p>
                     </div>
                 </div>
                 <a href="#order-form" class="bg-primary text-white text-center py-4 font-display hover:bg-red-700 transition-colors">Select Size</a>
@@ -158,7 +164,7 @@
             <div class="text-center mb-10">
                 <h2 class="font-display text-4xl text-primary mb-4">Place Your Order</h2>
                 <p class="text-gray-500 font-medium">We offer both <strong>Self-Collection</strong> and <strong>Islandwide Delivery</strong>.</p>
-                <p class="text-sm text-gray-400 mt-2">Delivery charges (from $15) based on location (Free delivery for spend above S$100).</p>
+                <p class="text-sm text-gray-400 mt-2">Delivery charges (from $15) apply based on location (Free delivery for spend above S$100).</p>
             </div>
 
             <form id="bakeryForm" class="space-y-8">
@@ -207,7 +213,7 @@
 <footer class="bg-nav-beige py-12 text-center border-t border-orange-100">
     <div class="flex justify-center gap-6 mb-6">
         <a href="https://www.instagram.com/ohhbakehouse" target="_blank" class="flex items-center gap-2 text-primary hover:text-red-700 font-bold transition-colors">
-            <span class="material-icons-outlined">instagram</span> Instagram
+            <span class="material-icons-outlined">instagram</span> @ohhbakehouse
         </a>
         <a href="https://www.tiktok.com/@ohhbakehouse" target="_blank" class="flex items-center gap-2 text-primary hover:text-red-700 font-bold transition-colors">
             <span class="material-icons-outlined">videocam</span> TikTok
@@ -218,7 +224,6 @@
 </footer>
 
 <script>
-    // Carousel Scroll Function
     function scrollCarousel(direction) {
         const carousel = document.getElementById('productCarousel');
         const scrollAmount = carousel.offsetWidth * 0.8;
